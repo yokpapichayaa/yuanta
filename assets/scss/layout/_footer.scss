@@ -1,0 +1,46 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+footer{
+    @media (max-width: $laptop) {
+        font-size: 14px;
+    }
+    .title-f{
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+    .desc-f{
+        margin-bottom: 20px;
+    }
+    
+    input[type="email"] {
+        width: 100%;
+        background-color: $bg-footer;
+        
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    input[type="submit"] {
+        border: none;
+        background: none;
+        width: 100%;
+    }
+    
+    .button-f{
+        background-color: $button-f;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .copyright{
+        @include flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        text-transform: uppercase;
+        .c-name{
+            font-weight: 600;
+        }
+    }
+}

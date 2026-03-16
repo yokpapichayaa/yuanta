@@ -1,0 +1,12 @@
+@mixin flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox; /* สำหรับ IE10 */
+  display: flex;
+}
