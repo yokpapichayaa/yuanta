@@ -490,7 +490,7 @@ button {
   display: flex;
   gap: 8px;
   position: absolute;
-  right: 50px;
+  right: 37px;
   width: 25%;
   display: none !important;
 }

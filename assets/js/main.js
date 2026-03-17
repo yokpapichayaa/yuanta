@@ -1,5 +1,5 @@
 function includeHTML(id, file) {
-  fetch(file)
+  return fetch(file)
     .then(response => {
       if (!response.ok) {
         throw new Error("File not found");
@@ -8,18 +8,22 @@ function includeHTML(id, file) {
     })
     .then(data => {
       document.getElementById(id).innerHTML = data;
-    })
-    .catch(error => console.error(error));
+    });
 }
 
-includeHTML("head", "pages/head.html");
-includeHTML("header", "pages/components/header.html");
-includeHTML("home", "pages/home.html");
-includeHTML("footer", "pages/components/footer.html");
+// ⛔ ไม่ใช้ setTimeout แล้ว
+Promise.all([
+  includeHTML("head", "pages/head.html"),
+  includeHTML("header", "pages/components/header.html"),
+  includeHTML("home", "pages/home.html"),
+  includeHTML("footer", "pages/components/footer.html")
+]).then(() => {
+  initApp(); // 👉 ค่อยเริ่ม JS หลังโหลดเสร็จ
+});
 
 
 
-setTimeout(() => {
+function initApp() {
 
 // menu scroll
 const nav = document.querySelector(".navbar");
@@ -227,4 +231,4 @@ const swiper = new Swiper(".mySwiper2", {
     toast.classList.add('show');
     setTimeout(function() { toast.classList.remove('show'); }, 3500);
   }
-}, 1000);
+}
