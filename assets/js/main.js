@@ -11,14 +11,13 @@ function includeHTML(id, file) {
     });
 }
 
-// ⛔ ไม่ใช้ setTimeout แล้ว
 Promise.all([
   includeHTML("head", "pages/head.html"),
   includeHTML("header", "pages/components/header.html"),
   includeHTML("home", "pages/home.html"),
   includeHTML("footer", "pages/components/footer.html")
 ]).then(() => {
-  initApp(); // 👉 ค่อยเริ่ม JS หลังโหลดเสร็จ
+  initApp();
 });
 
 
@@ -29,9 +28,9 @@ function initApp() {
 const nav = document.querySelector(".navbar");
 function updateNav() {
   if (window.scrollY > 0) {
-    nav.classList.add('scrolled');  // → background white
+    nav.classList.add('scrolled'); 
   } else {
-    nav.classList.remove('scrolled'); // → transparent
+    nav.classList.remove('scrolled');
   }
 }
 
@@ -60,9 +59,7 @@ const swiper = new Swiper(".mySwiper2", {
   },
 });
 
-/* ════════════════════════════════
-     Multi-select dropdown
-  ════════════════════════════════ */
+//selector
   const selectedValues = new Set();
   const selectField    = document.getElementById('selectField');
   const dropdownMenu   = document.getElementById('dropdownMenu');
@@ -121,9 +118,7 @@ const swiper = new Swiper(".mySwiper2", {
     }
   });
 
-  /* ════════════════════════════════
-     Time validation
-  ════════════════════════════════ */
+//Time input
   function validateTime() {
     var from = document.getElementById('timeFrom').value;
     var to   = document.getElementById('timeTo').value;
@@ -138,9 +133,7 @@ const swiper = new Swiper(".mySwiper2", {
   document.getElementById('timeFrom').addEventListener('change', validateTime);
   document.getElementById('timeTo').addEventListener('change', validateTime);
 
-  /* ════════════════════════════════
-     Live clear errors
-  ════════════════════════════════ */
+//Clear error
   ['firstName','lastName','email','phone'].forEach(function(id) {
     var el = document.getElementById(id);
     el.addEventListener('input', function() {
@@ -150,9 +143,7 @@ const swiper = new Swiper(".mySwiper2", {
     });
   });
 
-  /* ════════════════════════════════
-     Form validation
-  ════════════════════════════════ */
+//Form Validate
   function validateForm() {
     var valid = true;
 
@@ -204,9 +195,7 @@ const swiper = new Swiper(".mySwiper2", {
     return valid;
   }
 
-  /* ════════════════════════════════
-     Submit
-  ════════════════════════════════ */
+//Submit contact
   document.getElementById('submitBtn').addEventListener('click', function() {
     if (!validateForm()) return;
 
@@ -218,13 +207,11 @@ const swiper = new Swiper(".mySwiper2", {
     setTimeout(function() {
       btn.disabled = false;
       btn.textContent = 'ส่งข้อมูล';
-      showToast('✅ ส่งข้อมูลเรียบร้อยแล้ว เราจะติดต่อกลับโดยเร็วที่สุด');
+      showToast('ส่งข้อมูลเรียบร้อยแล้ว เราจะติดต่อกลับโดยเร็วที่สุด');
     }, 1200);
   });
 
-  /* ════════════════════════════════
-     Toast notification
-  ════════════════════════════════ */
+  // toast
   function showToast(msg) {
     var toast = document.getElementById('toast');
     toast.textContent = msg;
