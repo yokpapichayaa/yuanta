@@ -3,6 +3,7 @@
 footer{
     background: $bg-footer;
     overflow: hidden;
+    position: relative;
     .footer{
         text-align: center;
         color: $primary-color;
@@ -31,5 +32,10 @@ footer{
         @media (max-width: $laptop) {
             padding: 20px 0;
         }
+    }
+    .footer-mark{
+        position: absolute;
+        top: 0;
+        left: 10%;
     }
 }
