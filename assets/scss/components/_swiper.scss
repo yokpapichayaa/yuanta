@@ -26,3 +26,65 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* จัด pagination ซ้าย + nav ขวา */
+.swiper-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.swiper-nav {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  right: 10px;
+  width: 25%;
+  display: none !important;
+  @media (max-width: $tablet-sm) {
+      display: block !important;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: static;   
+  margin: 0;
+  width: 30px !important;
+  height: 30px !important;
+  border: 1.5px solid #e0e6ef;
+  border-radius: 10px;
+  background: #fff;
+  color: #2563eb;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  &::after{
+    font-size: 13px !important;
+    font-weight: 700;
+    color: $dark-b;
+  }
+}
+
+/* pagination dots */
+.swiper-pagination {
+  position: static; 
+  bottom: 60px !important;
+  left: -143px!important;
+  display: none !important;
+  @media (max-width: $tablet-sm) {
+      display: block !important;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background: #2563eb;
+}
+
+.swiper-Thumbnails{
+  @media (max-width: $tablet-sm) {
+      display: none !important;
+  }
+}

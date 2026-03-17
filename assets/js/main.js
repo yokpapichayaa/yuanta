@@ -20,40 +20,19 @@ includeHTML("footer", "pages/components/footer.html");
 
 
 setTimeout(() => {
-  
-//Menu mobile
-const hamburger = document.querySelector(".hamburger");
-const menu = document.querySelector(".nav-mobile");
-const dropdownToggle = document.querySelector(".dropdown-tog");
-const dropdownmobile = document.querySelector(".dropdown-show");
-
-// เปิด/ปิด main menu
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  menu.classList.toggle("active");
-});
-
-// เปิด/ปิด dropdown
-const navToggle = document.querySelector(".nav-toggle");
-const navItem = document.querySelector(".nav-submenu");
-const arrowSub = document.querySelector(".nav-arrow");
-
-navToggle.addEventListener("click", () => {
-  navToggle.classList.toggle("open");
-  navItem.classList.toggle("open");
-  arrowSub.classList.toggle("open");
-});
 
 // menu scroll
-window.addEventListener("scroll", () => {
-  const nav = document.querySelector(".navbar");
-
-  if (window.scrollY > 10) {
-    nav.classList.add("scrolled");
+const nav = document.querySelector(".navbar");
+function updateNav() {
+  if (window.scrollY > 0) {
+    nav.classList.add('scrolled');  // → background white
   } else {
-    nav.classList.remove("scrolled");
+    nav.classList.remove('scrolled'); // → transparent
   }
-});
+}
+
+window.addEventListener('scroll', updateNav);
+updateNav();
 
 const thumbs = new Swiper(".mySwiper", {
   slidesPerView: 4,
@@ -63,8 +42,17 @@ const thumbs = new Swiper(".mySwiper", {
 
 const swiper = new Swiper(".mySwiper2", {
   spaceBetween: 10,
+  autoHeight: true,
   thumbs: {
     swiper: thumbs,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 });
 

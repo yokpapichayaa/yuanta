@@ -10,6 +10,9 @@ button {
   padding: 0;
   margin: 0;
   padding: 12px 40px !important;
+  @media (max-width: $tablet) {
+      padding: 9px 25px !important;
+  }
   &--create{
     border: 0;
     margin-bottom: 0 !important;
@@ -21,15 +24,30 @@ button {
     color: $primary-color!important;
     width: calc(50% - 1rem);
     margin-right: 20px;
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
   }
   &--white{
     background-color:  $primary-color!important;
     color: $button-f!important;
     width: calc(50% - 1rem);
+    @media (max-width: $desktop) {
+      padding: 12px 14px !important;
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+      margin-top: 20px;
+    }
   }
   &--process{
     width: 30% !important;
     margin-top: 50px !important;
     text-align: center;
+    @media (max-width: $tablet) {
+      width: 100% !important;
+      margin-top: 30px !important;
+      margin-right: 0;
+    }
   }
 }

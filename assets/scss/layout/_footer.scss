@@ -2,7 +2,7 @@
 @use '../abstracts/mixins' as *;
 footer{
     background: $bg-footer;
-    
+    overflow: hidden;
     .footer{
         text-align: center;
         color: $primary-color;
@@ -15,11 +15,21 @@ footer{
         padding: 20px 50px;
         .menu-item{
             margin: 0 10px;
+            @media (max-width: $laptop) {
+                font-size: 14px;
+            }
         }
         .blockicon{
             &--image{
                 margin: 0 5px;
             }
+        }
+    }
+    .menu-wrapper{
+        @include flex;
+        justify-content: center;
+        @media (max-width: $laptop) {
+            padding: 20px 0;
         }
     }
 }

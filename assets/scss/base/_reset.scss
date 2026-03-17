@@ -22,13 +22,17 @@ body {
   padding-left: 50px;
   padding-right: 50px;
   max-width: 1400px;
+  @media (max-width: $tablet) {
+      padding-left: 40px;
+      padding-right: 40px;
+  }
   &--nav{
       width: 100%;
   }
   &--footer{
       padding:41px 58px;
       
-      @media (max-width: $laptop) {
+      @media (max-width: $tablet-sm) {
         padding:40px 35px;
       }
   }
@@ -63,9 +67,10 @@ a{
 
 section{
  padding: 70px 0;
-  // @media (max-width: $laptop) {
-  //   margin-bottom: 50px;
-  // }
+ overflow: hidden;
+  @media (max-width: $laptop) {
+    padding: 50px 0;
+  }
 }
 
 video{
