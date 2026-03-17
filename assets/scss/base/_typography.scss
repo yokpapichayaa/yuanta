@@ -1,47 +1,69 @@
 @use "../abstracts/variables" as *;
-h2,h3,h4,h5{
-    font-weight: 900 !important;
+h1,h2,h3,h4,h5{
+    font-weight: 700 !important;
     line-height: 1.5;
-    margin-bottom: 24px;
-    text-transform: uppercase;
+    margin-bottom: 0px !important;
+    // text-transform: uppercase;
+    font-family: $font-main;
+}
+h1,.h1{
+     font-size: 48px !important;
 }
 
 h2{
-    font-size: 70px !important;
-    @media (max-width: $laptop) {
-        font-size: 45px !important;
-    }
-    @media (max-width: $tablet) {
-        font-size: 35px !important;
-    }
-    @media (max-width: $mobile) {
-        font-size: 20px !important;
-    }
+    font-size: 36px !important;
+    // @media (max-width: $laptop) {
+    //     font-size: 45px !important;
+    // }
+    // @media (max-width: $tablet) {
+    //     font-size: 35px !important;
+    // }
+    // @media (max-width: $mobile) {
+    //     font-size: 20px !important;
+    // }
 }
 
 h3{
-    font-size: 60px!important;
-    @media (max-width: $laptop) {
-        font-size: 40px !important;
-    }
-    @media (max-width: $tablet) {
-        font-size: 30px !important;
-    }
+    font-size: 24px!important;
+    // @media (max-width: $laptop) {
+    //     font-size: 40px !important;
+    // }
+    // @media (max-width: $tablet) {
+    //     font-size: 30px !important;
+    // }
 }
 
 h4{
-    font-size: 40px !important;
-    @media (max-width: $laptop) {
-        font-size: 35px !important;
-    }
-    @media (max-width: $tablet) {
-        font-size: 25px !important;
-    }
-    @media (max-width: $tablet-sm) {
-        font-size: 15px !important;
-    }
+    font-size: 22px!important;
+    // @media (max-width: $laptop) {
+    //     font-size: 35px !important;
+    // }
+    // @media (max-width: $tablet) {
+    //     font-size: 25px !important;
+    // }
+    // @media (max-width: $tablet-sm) {
+    //     font-size: 15px !important;
+    // }
 }
 
 h5{
-    font-size: 16px!important;
+   font-size: 20px!important;
+}
+
+.gradient-blue{
+    background: $gradient-blue;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.orange{
+    color: $h-color;
+}
+
+.opacity-60{
+    opacity: 60%;
+}
+
+.text-center{
+    text-align: center;
 }

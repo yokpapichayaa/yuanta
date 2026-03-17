@@ -1,13 +1,5 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
-.logo{
-    width: 100%;
-    mix-blend-mode: difference;
-    img{
-        width: 100%;
-    }
-}
-
 #header{
     width: 100%;
     position: sticky;
@@ -21,7 +13,12 @@
     }
 
     .navbar{
-        background-color: $primary-color;
+        background-color: transparent;
+        padding: 20px 0;
+        transition: 0.3s;
+        &.scrolled{
+            background-color: $primary-color;
+        }
         .menu-desktop{
             text-align: center;
             @media (max-width: $laptop) {
@@ -32,7 +29,7 @@
                 transform-origin: center;
                 will-change: transform;
                 transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-                margin-right: 60px;
+                margin-right: 20px;
                 cursor: pointer;
                 @media (max-width: $desktop) {
                     margin-right: 30px;
@@ -214,18 +211,36 @@
         }
     }
 
-    
-    .signin{
+    .create{
         text-align: right;
-        order: 2;
-        @media (max-width: $laptop) {
-            order: 3;
-        }
     }
+}
+.lineafter{
+    position: absolute;
+    &--banner{
+        top: 0;
+        right: 50px;
+    }
+    &--port1{
+        top: -35%;
+        left: -22%;
+    }
+    &--port2{
+        bottom: -10%;
+        right: -0%;
+        z-index: 1;
+    }
+}
 
-    .cart-item{
-        img{
-            margin-left: 20px;
-        }
+.linetran{
+    position: absolute;
+    &--banner{
+        top: 20%;
+        right: 50px;
+    }
+    &--port2{
+        bottom: -10%;
+        right: -0%;
+        z-index: 1;
     }
 }

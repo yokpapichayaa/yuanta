@@ -9,7 +9,7 @@
 }
 
 body {
-  background: $primary-color;
+  background: $bg-main;
   color: $font-color;
   font-family: $font-main !important;
   line-height: 1.6;
@@ -19,23 +19,15 @@ body {
 .containers{
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  &--conl{
-      max-width: 1400px;
-  }
-  &--conm{
-      max-width: 1200px;
-  }
-  &--cons{
-      max-width: 600px;
-  }
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: 1400px;
   &--nav{
       width: 100%;
   }
   &--footer{
       padding:41px 58px;
-      background-color: $bg-footer;
+      
       @media (max-width: $laptop) {
         padding:40px 35px;
       }
@@ -65,15 +57,15 @@ input{
 
 a{
   text-decoration: none !important;
-  color: $secondary-color !important;
+  color: $font-color !important;
   cursor: pointer;
 }
 
 section{
-  margin-bottom: 100px;
-  @media (max-width: $laptop) {
-    margin-bottom: 50px;
-  }
+ padding: 70px 0;
+  // @media (max-width: $laptop) {
+  //   margin-bottom: 50px;
+  // }
 }
 
 video{

@@ -20,161 +20,7 @@ includeHTML("footer", "pages/components/footer.html");
 
 
 setTimeout(() => {
-  document.addEventListener("DOMContentLoaded", function() {
-      const video = document.querySelector(".video-site");
-      console.log(video);
-      video.muted = true;
-      video.play().catch(() => {});
-  });
-  const dropdown = document.querySelector(".dropdown-toggle");
-  const list = document.querySelector(".dropdown-menu");
-  dropdown.addEventListener("mouseenter", () => {
-    list.classList.add("onhover");
-  });
-
-  dropdown.addEventListener("mouseleave", () => {
-    list.classList.remove("onhover");
-  });
-
-// เมนูหลัก
-  const dropdownMenu = document.querySelector(".dropdown-l");
-  const listMenu = document.querySelector(".menu-drop");
-  const items = document.querySelectorAll(".menu-drop-item");
-// ถ้า hover menu editorial จะขึ้น class onhover
-  dropdownMenu.addEventListener("mouseenter", () => {
-    dropdownMenu.classList.add("onhover");
-    listMenu.classList.add("onhover");
-  });
-
-  dropdownMenu.addEventListener("mouseleave", () => {
-    dropdownMenu.classList.remove("onhover");
-    listMenu.classList.remove("onhover");
-  });
-
   
-  // ถ้าเอาเม้าส์ hover ตัวหนังสืออยู่ ถ้าไกลกว่า 50px dropdown menu จะหลุดออก
-  items.forEach((item) => {
-    listMenu.addEventListener("mouseenter", () => {
-      dropdownMenu.classList.add("onhover");
-      listMenu.classList.add("onhover");
-    });
-
-    document.addEventListener("mousemove", (e) => {
-      let isInsideAnyItem = false;
-
-      items.forEach((item) => {
-        const rect = item.getBoundingClientRect();
-
-        if (
-          e.clientX >= rect.left - 50 &&
-          e.clientX <= rect.right + 50 &&
-          e.clientY >= rect.top - 50 &&
-          e.clientY <= rect.bottom + 50
-        ) {
-          isInsideAnyItem = true;
-        }
-      });
-
-      if (!isInsideAnyItem) {
-        listMenu.classList.remove("onhover");
-        dropdownMenu.classList.remove("onhover");
-      }
-    });
-  });
-
-  // ส่วน collection1 ที่ hover แล้วปิดรูปออก
-  const wrapcol = document.querySelector(".wrap-col .box-col");
-  const boxImage = document.querySelector(".wrap-col .box-image");
-  wrapcol.addEventListener("mouseenter", () => {
-    boxImage.classList.add("onhover");
-  });
-
-  wrapcol.addEventListener("mouseleave", () => {
-    boxImage.classList.remove("onhover");
-  });
-
-  //ส่วน collection ที่ hover แล้วเอารูปออก
-  const wraps = document.querySelectorAll(".box-colmid .wrapper");
-
-  wraps.forEach((wrap) => {
-    const image = wrap.querySelector(".box-imagecol");
-
-    if (image) {
-      wrap.addEventListener("mouseenter", () => {
-        image.classList.add("onhover");
-      });
-
-      wrap.addEventListener("mouseleave", () => {
-        image.classList.remove("onhover");
-      });
-    }
-  });
-
-  //annountment
-  const track = document.querySelector(".announcement__track");
-  const groups = document.querySelectorAll(".announcement__group");
-
-  function duplicateGroups() {
-    const trackWidth = track.scrollWidth;
-    const screenWidth = window.innerWidth;
-
-    // clone จนกว่าจะกว้างพออย่างน้อย 2 เท่าหน้าจอ
-    while (track.scrollWidth < screenWidth * 2) {
-      groups.forEach(group => {
-        const clone = group.cloneNode(true);
-        track.appendChild(clone);
-      });
-    }
-  }
-
-duplicateGroups();
-
-  const selectBox = document.querySelector(".select-box");
-  const options = document.querySelector(".options");
-  const selected = document.getElementById("selected");
-  const arrow = document.querySelector(".arrow");
-
-  selectBox.addEventListener("click", () => {
-    options.classList.toggle("active");
-    arrow.classList.toggle("rotate");
-  });
-
-  document.querySelectorAll(".options li").forEach(option => {
-    option.addEventListener("click", () => {
-      selected.textContent = option.textContent;
-      options.classList.remove("active");
-      arrow.classList.remove("rotate");
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".custom-select")) {
-      options.classList.remove("active");
-      arrow.classList.remove("rotate");
-    }
-  });
-
-const inputs = document.querySelectorAll(".input-re input");
-
-inputs.forEach(input => {
-  input.addEventListener("focus", function() {
-    const label = document.querySelector(
-      `.contact-title[for="${this.id}"]`
-    );
-    label.classList.add("active");
-  });
-
-  input.addEventListener("blur", function() {
-    const label = document.querySelector(
-      `.contact-title[for="${this.id}"]`
-    );
-
-    if (this.value === "") {
-      label.classList.remove("active");
-    }
-  });
-});
-
 //Menu mobile
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".nav-mobile");
@@ -198,60 +44,199 @@ navToggle.addEventListener("click", () => {
   arrowSub.classList.toggle("open");
 });
 
-//New Section + Bestseller
+// menu scroll
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector(".navbar");
 
-const logo = document.querySelector('.logo');
-const boxwrap = document.querySelectorAll('.box-wrap');
-let ticking = false;
-
-function update() {
-
-  const logoRect = logo.getBoundingClientRect();
-
-  boxwrap.forEach(wrap => {
-
-    const inner = wrap.querySelector('.box-text-inner');
-    if (!inner) return;
-
-    const wrapRect = wrap.getBoundingClientRect();
-
-    let move = 0;
-
-    const isInRange =
-      logoRect.bottom >= wrapRect.top &&
-      logoRect.top <= wrapRect.bottom;
-
-    if (isInRange) {
-
-      const titleStart =
-        wrapRect.top +
-        (wrapRect.height - inner.offsetHeight) / 2;
-
-      const overlap = logoRect.bottom - titleStart;
-
-      if (overlap > 0) {
-
-        const maxMove =
-          wrapRect.bottom -
-          (titleStart + inner.offsetHeight);
-
-        move = Math.min(overlap, maxMove);
-      }
-    }
-
-    move = Math.max(0, move);
-
-    inner.style.transform = `translate3d(0, ${move}px, 0)`;
-
-  });
-
-  ticking = false;
-}
-
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    requestAnimationFrame(update);
-    ticking = true;
+  if (window.scrollY > 10) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
   }
 });
+
+const thumbs = new Swiper(".mySwiper", {
+  slidesPerView: 4,
+  spaceBetween: 10,
+  watchSlidesProgress: true,
+});
+
+const swiper = new Swiper(".mySwiper2", {
+  spaceBetween: 10,
+  thumbs: {
+    swiper: thumbs,
+  },
+});
+
+/* ════════════════════════════════
+     Multi-select dropdown
+  ════════════════════════════════ */
+  const selectedValues = new Set();
+  const selectField    = document.getElementById('selectField');
+  const dropdownMenu   = document.getElementById('dropdownMenu');
+  const tagsContainer  = document.getElementById('tagsContainer');
+  const placeholder    = document.getElementById('selectPlaceholder');
+
+  selectField.addEventListener('click', function(e) {
+    if (e.target.classList.contains('remove')) return;
+    selectField.classList.toggle('open');
+    dropdownMenu.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.dropdown-option').forEach(function(opt) {
+    opt.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var val = opt.dataset.value;
+      if (selectedValues.has(val)) {
+        selectedValues.delete(val);
+        opt.classList.remove('selected');
+      } else {
+        selectedValues.add(val);
+        opt.classList.add('selected');
+      }
+      renderTags();
+    });
+  });
+
+  function renderTags() {
+    tagsContainer.querySelectorAll('.tag').forEach(function(t) { t.remove(); });
+    if (selectedValues.size === 0) {
+      placeholder.style.display = '';
+      return;
+    }
+    placeholder.style.display = 'none';
+    selectedValues.forEach(function(val) {
+      var tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.innerHTML = val + ' <span class="remove">✕</span>';
+      tag.querySelector('.remove').addEventListener('click', function(e) {
+        e.stopPropagation();
+        selectedValues.delete(val);
+        document.querySelectorAll('.dropdown-option').forEach(function(o) {
+          if (o.dataset.value === val) o.classList.remove('selected');
+        });
+        renderTags();
+      });
+      tagsContainer.appendChild(tag);
+    });
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('selectWrapper').contains(e.target)) {
+      selectField.classList.remove('open');
+      dropdownMenu.classList.remove('open');
+    }
+  });
+
+  /* ════════════════════════════════
+     Time validation
+  ════════════════════════════════ */
+  function validateTime() {
+    var from = document.getElementById('timeFrom').value;
+    var to   = document.getElementById('timeTo').value;
+    var err  = document.getElementById('err-time');
+    if (from && to && from >= to) {
+      err.classList.add('visible');
+      return false;
+    }
+    err.classList.remove('visible');
+    return true;
+  }
+  document.getElementById('timeFrom').addEventListener('change', validateTime);
+  document.getElementById('timeTo').addEventListener('change', validateTime);
+
+  /* ════════════════════════════════
+     Live clear errors
+  ════════════════════════════════ */
+  ['firstName','lastName','email','phone'].forEach(function(id) {
+    var el = document.getElementById(id);
+    el.addEventListener('input', function() {
+      el.classList.remove('error');
+      var errEl = document.getElementById('err-' + id);
+      if (errEl) errEl.classList.remove('visible');
+    });
+  });
+
+  /* ════════════════════════════════
+     Form validation
+  ════════════════════════════════ */
+  function validateForm() {
+    var valid = true;
+
+    // Required fields
+    ['firstName','lastName'].forEach(function(id) {
+      var input = document.getElementById(id);
+      var err   = document.getElementById('err-' + id);
+      if (!input.value.trim()) {
+        input.classList.add('error');
+        err.classList.add('visible');
+        valid = false;
+      } else {
+        input.classList.remove('error');
+        err.classList.remove('visible');
+      }
+    });
+
+    // Email
+    var emailInput = document.getElementById('email');
+    var emailErr   = document.getElementById('err-email');
+    if (!emailInput.value.trim()) {
+      emailInput.classList.add('error');
+      emailErr.classList.add('visible');
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+      emailInput.classList.add('error');
+      emailErr.classList.add('visible');
+      valid = false;
+    } else {
+      emailInput.classList.remove('error');
+      emailErr.classList.remove('visible');
+    }
+
+    // Phone (optional, validate only if filled)
+    var phoneInput = document.getElementById('phone');
+    var phoneErr   = document.getElementById('err-phone');
+    if (phoneInput.value.trim() && !/^[0-9]{9,10}$/.test(phoneInput.value.trim())) {
+      phoneInput.classList.add('error');
+      phoneErr.classList.add('visible');
+      valid = false;
+    } else {
+      phoneInput.classList.remove('error');
+      phoneErr.classList.remove('visible');
+    }
+
+    // Time range
+    if (!validateTime()) valid = false;
+
+    return valid;
+  }
+
+  /* ════════════════════════════════
+     Submit
+  ════════════════════════════════ */
+  document.getElementById('submitBtn').addEventListener('click', function() {
+    if (!validateForm()) return;
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'กำลังส่งข้อมูล...';
+
+    // Simulate API call delay
+    setTimeout(function() {
+      btn.disabled = false;
+      btn.textContent = 'ส่งข้อมูล';
+      showToast('✅ ส่งข้อมูลเรียบร้อยแล้ว เราจะติดต่อกลับโดยเร็วที่สุด');
+    }, 1200);
+  });
+
+  /* ════════════════════════════════
+     Toast notification
+  ════════════════════════════════ */
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3500);
+  }
 }, 1000);

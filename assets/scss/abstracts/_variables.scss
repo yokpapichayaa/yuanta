@@ -1,14 +1,46 @@
-$primary-color: #F1F7FB;
+$primary-color: #ffffff;
 $secondary-color: #0A6EE7;
 $bg-main: #F1F7FB !important;
 $button-f: #0A6EE7;
+$dark-b:#1a1a2e;
+$darkest-blue: #0c1936;
 $bg-footer: linear-gradient(90deg,rgba(0, 161, 233, 1) 0%, rgba(0, 161, 233, 1) 10%, rgba(0, 78, 186, 1) 100%);;
 $gray: #e7e7e7;
+$dark-gray: #666;
+$light-gray: #e0e6ef;
+$darkest-gray: #b0bec5;
+$gray-border: #dce8f5;
+$gradient-blue: linear-gradient(90deg, #00A1E9 69.9%, #004EBA 97.11%);
+$bg-card: linear-gradient(180deg, #FFFFFF 0%, #EBF4FF 100%);
+$bg-contact: #EFF6FF;
+$border-contact: #B5D3F8;
+$green: #52C41A;
+$red: #e84040;
+$blue-contact: #2563eb;
+$blue-cusor:#7a9cce;
+$bg-focus: #eef3fc;
+$button-dis:#a5b4d6;
+$bg-toast: #1a3a6b;
+
+
 // Font
-$font-heading: "Oleo Script", system-ui;;
-$font-main: "Oleo Script", system-ui;;
+$font-heading: "Noto Sans Thai", sans-serif;
+$font-main: "Noto Sans Thai", sans-serif;
 $font-color: #000000;
-$h-color: #FFFFFF;
+$h-color: #EB6101;
+
+//Color font Yuanta Securities
+$navy: #266B9E;
+$pink-dark: #C94855;
+$orange-dark: #B56643;
+$purple: #8200DB;
+$purple-dark: #432DD7;
+$gold: #98794A;
+$yellow: #D08700;
+$pink: #E60076;
+$green-light: #26947A;
+$green-midium: #00786F;
+$green-dark: #35893A;
 
 //Device
 $mobile: 480px;
