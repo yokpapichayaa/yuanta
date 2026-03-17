@@ -286,6 +286,11 @@
     }
     .accordion-body{
         background:$bg-card;
+        li{
+            @media (max-width: $tablet-sm) {
+                font-size: 13px;
+            }
+        }
     }
     .accordion-item{
         margin: 20px 0;
@@ -381,6 +386,9 @@
             margin-bottom: 20px;
             @media (max-width: $desktop) {
                 font-size: 14px;
+            }
+            @media (max-width: $tablet-sm) {
+                font-size: 12px;
             }
             img{
                 width: auto;

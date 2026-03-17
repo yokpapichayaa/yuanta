@@ -490,7 +490,7 @@ button {
   display: flex;
   gap: 8px;
   position: absolute;
-  right: 10px;
+  right: 50px;
   width: 25%;
   display: none !important;
 }
@@ -508,7 +508,7 @@ button {
   height: 30px !important;
   border: 1.5px solid #e0e6ef;
   border-radius: 10px;
-  background: #fff;
+  background: #ffffff;
   color: #2563eb;
 }
 
@@ -522,8 +522,8 @@ button {
 /* pagination dots */
 .swiper-pagination {
   position: static;
-  bottom: 60px !important;
-  left: -143px !important;
+  bottom: 49px !important;
+  left: -117px !important;
   display: none !important;
 }
 @media (max-width: 576px) {
@@ -852,6 +852,11 @@ button {
 .sec-why .accordion-body {
   background: linear-gradient(180deg, #FFFFFF 0%, #EBF4FF 100%);
 }
+@media (max-width: 576px) {
+  .sec-why .accordion-body li {
+    font-size: 13px;
+  }
+}
 .sec-why .accordion-item {
   margin: 20px 0;
   border: solid 2px #dce8f5;
@@ -952,6 +957,11 @@ button {
 @media (max-width: 1200px) {
   .sec-promotion .card .card-date {
     font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .sec-promotion .card .card-date {
+    font-size: 12px;
   }
 }
 .sec-promotion .card .card-date img {

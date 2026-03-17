@@ -39,7 +39,7 @@
   display: flex;
   gap: 8px;
   position: absolute;
-  right: 10px;
+  right: 50px;
   width: 25%;
   display: none !important;
   @media (max-width: $tablet-sm) {
@@ -53,10 +53,10 @@
   margin: 0;
   width: 30px !important;
   height: 30px !important;
-  border: 1.5px solid #e0e6ef;
+  border: 1.5px solid $light-gray;
   border-radius: 10px;
-  background: #fff;
-  color: #2563eb;
+  background: $primary-color;
+  color: $blue-contact;
 }
 
 .swiper-button-prev,
@@ -71,8 +71,8 @@
 /* pagination dots */
 .swiper-pagination {
   position: static; 
-  bottom: 60px !important;
-  left: -143px!important;
+  bottom: 49px !important;
+  left: -117px !important;
   display: none !important;
   @media (max-width: $tablet-sm) {
       display: block !important;
@@ -80,7 +80,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: #2563eb;
+  background: $blue-contact;
 }
 
 .swiper-Thumbnails{
