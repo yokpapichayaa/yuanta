@@ -59,6 +59,10 @@ const swiper = new Swiper(".mySwiper2", {
   },
 });
 
+swiper.on('slideChange', () => {
+  swiper.updateAutoHeight();
+});
+
 //selector
   const selectedValues = new Set();
   const selectField    = document.getElementById('selectField');
