@@ -64,7 +64,7 @@
                         @media (max-width: $tablet-sm) {
                             position: absolute;
                             top: 10px;
-                            right: 22px;
+                            right: 0px;
                             width: 40%;
                         }
                     }
@@ -90,6 +90,7 @@
                 @media (max-width: $tablet-sm) {
                     display: block;
                     text-align: center;
+                    margin-top: 15px;
                 }
                 &--green{
                     background-color: $green;
