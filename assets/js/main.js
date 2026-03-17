@@ -45,9 +45,9 @@ const thumbs = new Swiper(".mySwiper", {
 
 const swiper = new Swiper(".mySwiper2", {
   spaceBetween: 10,
-  autoHeight: true,
+  
   thumbs: {
-    swiper: thumbs,
+    swiper: thumbs || null,
   },
   pagination: {
     el: '.swiper-pagination',
