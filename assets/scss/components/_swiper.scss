@@ -1,4 +1,4 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
 .swiper {
   width: 100%;
   height: auto;
@@ -15,14 +15,14 @@
   flex-direction: column;
   img {
     width: 100%;
-    height: auto;   /* 🔥 สำคัญ */
+    height: auto;
     object-fit: cover;
     display: block;
   }
 }
 .image-wrapper {
   width: 100%;
-  aspect-ratio: 16 / 9; /* หรือ ratio ของรูปจริง */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
@@ -56,7 +56,6 @@
   object-fit: cover;
 }
 
-/* จัด pagination ซ้าย + nav ขวา */
 .swiper-controls {
   display: flex;
   align-items: center;
@@ -72,13 +71,13 @@
   width: 25%;
   display: none !important;
   @media (max-width: $tablet-sm) {
-      display: block !important;
+    display: block !important;
   }
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-  position: static;   
+  position: static;
   margin: 0;
   width: 30px !important;
   height: 30px !important;
@@ -90,21 +89,20 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  &::after{
+  &::after {
     font-size: 13px !important;
     font-weight: 700;
     color: $dark-b;
   }
 }
 
-/* pagination dots */
 .swiper-pagination {
-  position: static; 
+  position: static;
   bottom: 49px !important;
   left: -117px !important;
   display: none !important;
   @media (max-width: $tablet-sm) {
-      display: block !important;
+    display: block !important;
   }
 }
 
@@ -112,8 +110,8 @@
   background: $blue-contact;
 }
 
-.swiper-Thumbnails{
+.swiper-Thumbnails {
   @media (max-width: $tablet-sm) {
-      display: none !important;
+    display: none !important;
   }
 }

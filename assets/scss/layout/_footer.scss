@@ -1,41 +1,41 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-footer{
-    background: $bg-footer;
-    overflow: hidden;
-    position: relative;
-    .footer{
-        text-align: center;
-        color: $primary-color;
-        &--address{
-            margin: 20px 0;
-        }
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+footer {
+  background: $bg-footer;
+  overflow: hidden;
+  position: relative;
+  .footer {
+    text-align: center;
+    color: $primary-color;
+    &--address {
+      margin: 20px 0;
     }
-    .menu-footer{
-        background-color: $primary-color;
-        padding: 20px 50px;
-        .menu-item{
-            margin: 0 10px;
-            @media (max-width: $laptop) {
-                font-size: 14px;
-            }
-        }
-        .blockicon{
-            &--image{
-                margin: 0 5px;
-            }
-        }
+  }
+  .menu-footer {
+    background-color: $primary-color;
+    padding: 20px 50px;
+    .menu-item {
+      margin: 0 10px;
+      @media (max-width: $laptop) {
+        font-size: 14px;
+      }
     }
-    .menu-wrapper{
-        @include flex;
-        justify-content: center;
-        @media (max-width: $laptop) {
-            padding: 20px 0;
-        }
+    .blockicon {
+      &--image {
+        margin: 0 5px;
+      }
     }
-    .footer-mark{
-        position: absolute;
-        top: 0;
-        left: 10%;
+  }
+  .menu-wrapper {
+    @include flex;
+    justify-content: center;
+    @media (max-width: $laptop) {
+      padding: 20px 0;
     }
+  }
+  .footer-mark {
+    position: absolute;
+    top: 0;
+    left: 10%;
+  }
 }

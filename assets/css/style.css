@@ -53,13 +53,6 @@ body {
   display: flex;
   justify-content: center;
 }
-.containers--logo {
-  position: fixed;
-  top: 75px;
-  width: 100%;
-  z-index: 10;
-  mix-blend-mode: difference;
-}
 
 input {
   border: none;
@@ -90,28 +83,40 @@ video {
   width: 100%;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
   font-weight: 700 !important;
   line-height: 1.5;
   margin-bottom: 0px !important;
   font-family: "Noto Sans Thai", sans-serif;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 48px !important;
 }
 @media (max-width: 992px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 40px !important;
   }
 }
 @media (max-width: 767px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 32px !important;
   }
 }
 @media (max-width: 480px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 27px !important;
   }
 }
@@ -473,14 +478,14 @@ button {
 }
 .swiper-slide img {
   width: 100%;
-  height: auto; /* 🔥 สำคัญ */
+  height: auto;
   object-fit: cover;
   display: block;
 }
 
 .image-wrapper {
   width: 100%;
-  aspect-ratio: 16/9; /* หรือ ratio ของรูปจริง */
+  aspect-ratio: 16/9;
   overflow: hidden;
 }
 
@@ -514,7 +519,6 @@ button {
   object-fit: cover;
 }
 
-/* จัด pagination ซ้าย + nav ขวา */
 .swiper-controls {
   display: flex;
   align-items: center;
@@ -555,7 +559,6 @@ button {
   color: #1a1a2e;
 }
 
-/* pagination dots */
 .swiper-pagination {
   position: static;
   bottom: 49px !important;
@@ -818,14 +821,20 @@ button {
 .sec-why .block-security h4, .sec-why .block-security .h4 {
   margin-bottom: 10px !important;
 }
-.sec-why .block-security .box-trade, .sec-why .block-security .box-research, .sec-why .block-security .box-tool {
+.sec-why .block-security .box-trade,
+.sec-why .block-security .box-research,
+.sec-why .block-security .box-tool {
   background: linear-gradient(180deg, #FFFFFF 0%, #EBF4FF 100%);
   border: solid 1px #e7e7e7;
   border-radius: 10px;
   padding: 20px 25px;
   margin: 50px 0;
 }
-.sec-why .block-security .box-trade h5, .sec-why .block-security .box-trade .h5, .sec-why .block-security .box-research h5, .sec-why .block-security .box-research .h5, .sec-why .block-security .box-tool h5, .sec-why .block-security .box-tool .h5 {
+.sec-why .block-security .box-trade h5, .sec-why .block-security .box-trade .h5,
+.sec-why .block-security .box-research h5,
+.sec-why .block-security .box-research .h5,
+.sec-why .block-security .box-tool h5,
+.sec-why .block-security .box-tool .h5 {
   color: #0A6EE7;
   margin-bottom: 20px !important;
 }
@@ -1300,7 +1309,7 @@ button {
 .sec-contact .card-wrapper .card .form-grid .dropdown-option {
   padding: 10px 16px;
   font-size: 14px;
-  color: #333;
+  color: #666;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1308,7 +1317,7 @@ button {
   transition: background 0.12s;
 }
 .sec-contact .card-wrapper .card .form-grid .dropdown-option:hover {
-  background: #f0f5ff;
+  background: #dce8f5;
 }
 .sec-contact .card-wrapper .card .form-grid .dropdown-option.selected {
   color: #2563eb;
@@ -1322,7 +1331,7 @@ button {
   content: "";
   width: 5px;
   height: 8px;
-  border: 2px solid #fff;
+  border: 2px solid #ffffff;
   border-top: none;
   border-left: none;
   transform: rotate(45deg);
@@ -1375,7 +1384,8 @@ button {
   border-radius: 6px;
   transition: background 0.15s;
 }
-.sec-contact .card-wrapper .card .form-grid .time-input:hover, .sec-contact .card-wrapper .card .form-grid .time-input :focus {
+.sec-contact .card-wrapper .card .form-grid .time-input:hover,
+.sec-contact .card-wrapper .card .form-grid .time-input :focus {
   background: #eef3fc;
 }
 .sec-contact .card-wrapper .card .disclaimer {
