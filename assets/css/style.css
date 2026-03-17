@@ -452,6 +452,18 @@ button {
 
 .swiper {
   width: 100%;
+  height: auto;
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+  height: auto !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .mySwiper2 {

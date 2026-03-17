@@ -45,7 +45,10 @@ const thumbs = new Swiper(".mySwiper", {
 
 const swiper = new Swiper(".mySwiper2", {
   spaceBetween: 10,
-  
+  autoHeight: true,
+  observer: true,
+  observeParents: true,
+  observeSlideChildren: true,
   thumbs: {
     swiper: thumbs || null,
   },
@@ -59,9 +62,10 @@ const swiper = new Swiper(".mySwiper2", {
   },
 });
 
-swiper.on('slideChange', () => {
+setTimeout(() => {
+  swiper.update();
   swiper.updateAutoHeight();
-});
+}, 100);
 
 //selector
   const selectedValues = new Set();
