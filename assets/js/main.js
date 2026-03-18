@@ -23,7 +23,7 @@ Promise.all([
 
 
 function initApp() {
-AOS.init();
+
 // menu scroll
 const nav = document.querySelector(".navbar");
 function updateNav() {
