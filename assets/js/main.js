@@ -23,7 +23,13 @@ Promise.all([
 
 
 function initApp() {
-
+AOS.init({
+  duration: 800,       // ความเร็ว animation (ms)
+  easing: "ease-out",  // easing function
+  once: true,          // เล่นครั้งเดียว
+  offset: 100,        // ระยะ trigger (px)
+  delay: 0,           // delay global (ms)
+});
 // menu scroll
 const nav = document.querySelector(".navbar");
 function updateNav() {
