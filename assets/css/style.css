@@ -1,12 +1,4 @@
 @charset "UTF-8";
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 * {
   margin: 0;
   padding: 0;
@@ -77,10 +69,6 @@ section {
   section {
     padding: 50px 0;
   }
-}
-
-video {
-  width: 100%;
 }
 
 h1, .h1,
@@ -234,77 +222,12 @@ h5, .h5 {
 #header .navbar .menu-desktop .menu-item:hover {
   transform: scale(1.2);
   font-weight: 700;
+  color: #0A6EE7 !important;
 }
 #header .navbar .menu-desktop .menu-item.onhover {
   color: #ffffff;
   z-index: 99;
   font-weight: 700;
-}
-#header .navbar .menu-desktop .menu-drop {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: #0A6EE7;
-  left: 0;
-  top: 0;
-  z-index: 20;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox; /* สำหรับ IE10 */
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 50px;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-#header .navbar .menu-desktop .menu-drop.onhover {
-  opacity: 1;
-  visibility: visible;
-}
-#header .navbar .menu-desktop .menu-drop .menu-drop-item {
-  color: #ffffff !important;
-  margin: 10px 0;
-}
-#header .navbar .nav-toggle {
-  position: relative;
-}
-#header .navbar .nav-toggle.open {
-  transform: scale(1.5);
-  transform-origin: center;
-  will-change: transform;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-  font-weight: 700;
-}
-#header .navbar .nav-toggle .nav-arrow::after {
-  content: "";
-  position: absolute;
-  margin-left: 20px;
-  top: 44%;
-  width: 6px;
-  height: 6px;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  transform: translateY(-50%) rotate(45deg);
-  transition: transform 0.3s ease;
-}
-#header .navbar .nav-toggle .nav-arrow.open::after {
-  transform: translateY(-50%) rotate(-135deg);
-}
-#header .navbar .nav-submenu {
-  padding: 0;
-  margin: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-}
-#header .navbar .nav-submenu.open {
-  padding: 33px 40px;
-  max-height: 500px;
-}
-#header .navbar .nav-submenu .nav-subitem {
-  padding: 10px;
 }
 #header .create {
   text-align: right;

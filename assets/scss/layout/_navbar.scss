@@ -37,6 +37,7 @@
         &:hover {
           transform: scale(1.2);
           font-weight: 700;
+          color: $secondary-color !important;
         }
         &.onhover {
           color: $primary-color;
@@ -44,77 +45,8 @@
           font-weight: 700;
         }
       }
-      .menu-drop {
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        background-color: $secondary-color;
-        left: 0;
-        top: 0;
-        z-index: 20;
-        @include flex;
-        align-items: center;
-        flex-direction: column;
-        padding-top: 50px;
-        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-        &.onhover {
-          opacity: 1;
-          visibility: visible;
-        }
-        .menu-drop-item {
-          color: $primary-color !important;
-          margin: 10px 0;
-        }
-      }
-    }
-    .nav-toggle {
-      position: relative;
-      &.open {
-        transform: scale(1.5);
-        transform-origin: center;
-        will-change: transform;
-        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-        font-weight: 700;
-      }
-      .nav-arrow {
-        &::after {
-          content: "";
-          position: absolute;
-          margin-left: 20px;
-          top: 44%;
-          width: 6px;
-          height: 6px;
-          border-right: 2px solid black;
-          border-bottom: 2px solid black;
-          transform: translateY(-50%) rotate(45deg);
-          transition: transform 0.3s ease;
-        }
-        &.open {
-          &::after {
-            transform: translateY(-50%) rotate(-135deg);
-          }
-        }
-      }
-    }
-    .nav-submenu {
-      padding: 0;
-      margin: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-
-      &.open {
-        padding: 33px 40px;
-        max-height: 500px;
-      }
-      .nav-subitem {
-        padding: 10px;
-      }
     }
   }
-
   .create {
     text-align: right;
   }
